@@ -4,8 +4,6 @@
  * Time:  2019-08-02 19:20
  */
 
-import 'package:flutter/animation.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart' hide RefreshIndicator, RefreshIndicatorState;
