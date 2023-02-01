@@ -660,7 +660,7 @@ class ArRefreshString implements RefreshString {
   String? loadingText = "تحميل…";
 
   @override
-  String? noMoreText = "لم يعد يوجد بيانات";
+  String? noMoreText = "لامزيد من البيانات";
 
   @override
   String? refreshCompleteText = "انتهى التحديث";
