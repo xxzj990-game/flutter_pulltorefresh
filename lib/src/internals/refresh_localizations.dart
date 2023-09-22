@@ -79,6 +79,7 @@ class RefreshLocalizations {
     'sv': SvRefreshString(),
     'pt': PtRefreshString(),
     'ko': KrRefreshString(),
+    'kk': KkRefreshString(),
   };
 
   RefreshString? get currentLocalization {
@@ -88,41 +89,25 @@ class RefreshLocalizations {
     return values["en"];
   }
 
-  static const RefreshLocalizationsDelegate delegate =
-      RefreshLocalizationsDelegate();
+  static const RefreshLocalizationsDelegate delegate = RefreshLocalizationsDelegate();
 
   static RefreshLocalizations? of(BuildContext context) {
     return Localizations.of(context, RefreshLocalizations);
   }
 }
 
-class RefreshLocalizationsDelegate
-    extends LocalizationsDelegate<RefreshLocalizations> {
+class RefreshLocalizationsDelegate extends LocalizationsDelegate<RefreshLocalizations> {
   const RefreshLocalizationsDelegate();
 
   @override
   bool isSupported(Locale locale) {
-    return [
-      'en',
-      'zh',
-      'fr',
-      'ru',
-      'uk',
-      'ja',
-      'it',
-      'de',
-      'ko',
-      'pt',
-      'sv',
-      'nl',
-      'es'
-    ].contains(locale.languageCode);
+    return ['en', 'zh', 'fr', 'ru', 'uk', 'ja', 'it', 'de', 'ko', 'pt', 'sv', 'nl', 'es', 'kk']
+        .contains(locale.languageCode);
   }
 
   @override
   Future<RefreshLocalizations> load(Locale locale) {
-    return SynchronousFuture<RefreshLocalizations>(
-        RefreshLocalizations(locale));
+    return SynchronousFuture<RefreshLocalizations>(RefreshLocalizations(locale));
   }
 
   @override
@@ -633,4 +618,40 @@ class KrRefreshString implements RefreshString {
 
   @override
   String? refreshingText = "새로 고침 중…";
+}
+
+/// Kazakh
+class KkRefreshString implements RefreshString {
+  @override
+  String? canLoadingText = "Көбірек жүктеп алу үшін жіберіңіз";
+
+  @override
+  String? canRefreshText = "Жаңарту үшін жіберіңіз";
+
+  @override
+  String? canTwoLevelText = "Екінші деңгейге өту үшін жіберіңіз";
+
+  @override
+  String? idleLoadingText = "Көбірек жүктеп алу үшін жоғары қарай тартыңыз";
+
+  @override
+  String? idleRefreshText = "Жаңарту үшін төмен қарай тартыңыз";
+
+  @override
+  String? loadFailedText = "Жүктеу қатесі";
+
+  @override
+  String? loadingText = "Жүктелуде…";
+
+  @override
+  String? noMoreText = "Басқа деректер жоқ";
+
+  @override
+  String? refreshCompleteText = "Жаңарту аяқталды";
+
+  @override
+  String? refreshFailedText = "Жаңарту мүмкін болмады";
+
+  @override
+  String? refreshingText = "Жаңарту…";
 }
