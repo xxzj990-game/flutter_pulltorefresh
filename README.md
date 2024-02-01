@@ -83,8 +83,8 @@ simple example,***It must be noted here that ListView must be the child of Smart
         enablePullUp: true,
         header: WaterDropHeader(),
         footer: CustomFooter(
-          builder: (BuildContext context,LoadStatus mode){
-            Widget body ;
+          builder: (BuildContext context,LoadStatus? mode){
+            late Widget body ;
             if(mode==LoadStatus.idle){
               body =  Text("pull up load");
             }
